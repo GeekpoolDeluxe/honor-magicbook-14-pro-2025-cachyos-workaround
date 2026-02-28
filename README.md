@@ -1,6 +1,8 @@
 # honor-magicbook-14-pro-2025-cachyos-workaround
 Install CachyOs(Kernel 6.19) on Honor MagicBook Pro 14 with denis-bb fix.
 
+![Alt text](honor.jpeg)
+
 # Honor MagicBook Pro 14 (2025)
 
 ## CachyOS (Kernel 6.19) + Limine Bootloader Workaround
