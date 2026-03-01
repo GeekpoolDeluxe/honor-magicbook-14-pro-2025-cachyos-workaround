@@ -130,7 +130,7 @@ Example:
 
 **(Update 01.03.26)**
 Insert the following lines directly after 
-/CachyOS-ACPI-FIX
+/+CachyOS
 with your own root ID. Check the entries below that begin with “root=UUID=”:
 
     /CachyOS-ACPI-FIX
