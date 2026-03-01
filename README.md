@@ -135,9 +135,9 @@ with your own root ID. Check the entries below that begin with “root=UUID=”:
 
     /CachyOS-ACPI-FIX
       protocol: linux
-      path: boot():/cachy-kernel/vmlinuz-linux-cachyos
+      path: boot():/ecb9dc4b109642c199dd3bd6d9c724b6/linux-cachyos/vmlinuz-linux-cachyos
       module_path: boot():/acpi_override.cpio
-      module_path: boot():/cachy-kernel/initramfs-linux-cachyos
+      module_path: boot():/ecb9dc4b109642c199dd3bd6d9c724b6/linux-cachyos/initramfs-linux-cachyos
       cmdline: quiet nowatchdog splash rw rootflags=subvol=/@ root=UUID=YOUR_UUID acpi_override=1
 
 You can also set default_entry: at the top of the file to 1 so that the default is booted.
