@@ -133,6 +133,9 @@ Insert the following lines directly after
 /+CachyOS
 with your own root ID. Check the entries below that begin with “root=UUID=”:
 
+**(Update 2 - 01.03.26)** 
+You also need to compare the hash(Example: ecb9dc4b109642c199dd3bd6d9c724b6) with your other boot options. This should also be checked again after updates.
+
     /CachyOS-ACPI-FIX
       protocol: linux
       path: boot():/ecb9dc4b109642c199dd3bd6d9c724b6/linux-cachyos/vmlinuz-linux-cachyos
