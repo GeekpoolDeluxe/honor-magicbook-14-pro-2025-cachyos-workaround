@@ -112,33 +112,13 @@ Edit:
 
     sudo nano /boot/limine.conf
 
-Inside your /+CachyOS kernel block:
+Before your /+CachyOS kernel block:
 
-### ~~A) Correct module order~~
-
-~~acpi_override.cpio MUST be above the normal initramfs:
-    module_path: boot():/acpi_override.cpio
-    module_path: boot():/......../linux-cachyos/initramfs-linux-cachyos#HASH
-Order is critical.~~
-
-### ~~B) Add Kernel Parameter~~
-
-~~In the cmdline: line, add:
-    acpi_override=1
-Example:
-    cmdline: quiet nowatchdog splash rw rootflags=subvol=/@ root=UUID=XXXX acpi_override=1~~
-
-**(Update 01.03.26)**
-~~Insert the following lines directly after 
-/+CachyOS~~
-
-(Update - 02.03.26)
 Insert the following lines directly before
 /+CachyOS
 
 with your own root ID. Check the entries below that begin with “root=UUID=”:
 
-**(Update 2 - 01.03.26)** 
 You also need to compare the hash(Example: ecb9dc4b109642c199dd3bd6d9c724b6) with your other boot options. This should also be checked again after updates.
 
     /+CachyOS-Custom
