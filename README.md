@@ -129,19 +129,25 @@ Example:
     cmdline: quiet nowatchdog splash rw rootflags=subvol=/@ root=UUID=XXXX acpi_override=1~~
 
 **(Update 01.03.26)**
-Insert the following lines directly after 
+~~Insert the following lines directly after 
+/+CachyOS~~
+
+(Update - 02.03.26)
+Insert the following lines directly before
 /+CachyOS
+
 with your own root ID. Check the entries below that begin with “root=UUID=”:
 
 **(Update 2 - 01.03.26)** 
 You also need to compare the hash(Example: ecb9dc4b109642c199dd3bd6d9c724b6) with your other boot options. This should also be checked again after updates.
 
-    /CachyOS-ACPI-FIX
+    /+CachyOS-Custom
+      //CachyOS-ACPI-FIX
       protocol: linux
       path: boot():/ecb9dc4b109642c199dd3bd6d9c724b6/linux-cachyos/vmlinuz-linux-cachyos
       module_path: boot():/acpi_override.cpio
       module_path: boot():/ecb9dc4b109642c199dd3bd6d9c724b6/linux-cachyos/initramfs-linux-cachyos
-      cmdline: quiet nowatchdog splash rw rootflags=subvol=/@ root=UUID=YOUR_UUID acpi_override=1
+      cmdline: quiet nowatchdog splash rw rootflags=subvol=/@ root=UUID=YOUR-UUID acpi_override=1
 
 You can also set default_entry: at the top of the file to 1 so that the default is booted.
 
