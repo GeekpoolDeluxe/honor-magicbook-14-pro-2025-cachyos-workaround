@@ -1,3 +1,4 @@
+
 # honor-magicbook-14-pro-2025-cachyos-workaround
 Install CachyOs(Kernel 6.19) on Honor MagicBook Pro 14 with denis-bb fix.
 
@@ -113,24 +114,33 @@ Edit:
 
 Inside your /+CachyOS kernel block:
 
-### A) Correct module order
+### ~~A) Correct module order~~
 
-acpi_override.cpio MUST be above the normal initramfs:
-
+~~acpi_override.cpio MUST be above the normal initramfs:
     module_path: boot():/acpi_override.cpio
     module_path: boot():/......../linux-cachyos/initramfs-linux-cachyos#HASH
+Order is critical.~~
 
-Order is critical.
+### ~~B) Add Kernel Parameter~~
 
-### B) Add Kernel Parameter
-
-In the cmdline: line, add:
-
+~~In the cmdline: line, add:
     acpi_override=1
-
 Example:
+    cmdline: quiet nowatchdog splash rw rootflags=subvol=/@ root=UUID=XXXX acpi_override=1~~
 
-    cmdline: quiet nowatchdog splash rw rootflags=subvol=/@ root=UUID=XXXX acpi_override=1
+**(Update 01.03.26)**
+Insert the following lines directly after 
+/CachyOS-ACPI-FIX
+with your own root ID. Check the entries below that begin with “root=UUID=”:
+
+    /CachyOS-ACPI-FIX
+      protocol: linux
+      path: boot():/cachy-kernel/vmlinuz-linux-cachyos
+      module_path: boot():/acpi_override.cpio
+      module_path: boot():/cachy-kernel/initramfs-linux-cachyos
+      cmdline: quiet nowatchdog splash rw rootflags=subvol=/@ root=UUID=YOUR_UUID acpi_override=1
+
+You can also set default_entry: at the top of the file to 1 so that the default is booted.
 
 ------------------------------------------------------------------------
 
